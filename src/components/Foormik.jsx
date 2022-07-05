@@ -22,7 +22,7 @@ export const Foormik = () => {
     });
   };
   return (
-    <>
+    <> f
       {orderCompra.length > 0 ? (
         <div className="orderCompra">
           <h1 style={{ fontSize: "2.2rem", color: "rgb(75 76 95)" }}>
