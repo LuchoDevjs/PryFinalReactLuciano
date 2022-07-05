@@ -34,7 +34,7 @@ function Cart() {
             ))}
             <div className="total">
               <p style={{padding:"25px"}}>Total: ${getItemPrice()}</p>
-              <Link to={"/formik"} className="buttonTerminarCompra">
+              <Link to={"/checkout"} className="buttonTerminarCompra">
               <Button>Comprar</Button>
               </Link>
                 <Button style={{color:"rgb(75 76 95)",border:"none",fontSize:"1rem", padding:"25px"}} variant="outlined" startIcon={<DeleteIcon />} onClick={() => emptyCart()}>

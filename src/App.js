@@ -9,8 +9,10 @@ import Cart from "./components/Cart";
 import CartContext from "./components/context/CartContext";
 import MyProvider from "./components/context/CartContext";
 import { initializeApp } from "firebase/app";
-import Checkout from "./components/Checkout";
-import { Foormik } from "./components/Foormik";
+import { Checkout } from "./components/Checkout";
+
+
+
 
 function App() {
   const firebaseConfig = {
@@ -39,8 +41,7 @@ function App() {
                 <Route path="/category/:id" element={<ItemListContainer />} />
                 <Route path="/item/:id" element={<ItemDetailContainer />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/formik" element={<Foormik />} />
+                <Route path="/checkout" element={<Checkout/>}/>
                 <Route path="*" element={<Error404 />} />
               </Routes>
             </div>
