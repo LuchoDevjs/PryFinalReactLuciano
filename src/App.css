@@ -1,38 +1,305 @@
-.App {
+.h1Saludo {
+  font-size: 1.5rem;
   text-align: center;
+  color: #000000ba;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contador {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+}
+
+.contador button {
+  background: #000000ba;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.contador button:hover {
+  background-color: #323030ba;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ListaPersonajes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+.itemDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.15);
+  color: #000000ba;
+  padding: 10px;
+}
+
+.itemDetail__img {
+  width: 40%;
+  border-radius: 15px;
+  padding: 10px;
+  margin-left: 100px;
+}
+
+.error404 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.error404 h1 {
+  font-size: 70px;
+}
+
+.error404 p {
+  font-size: 40px;
+}
+
+.buttonItem {
+  text-decoration: none;
+  color: #787A91;
+  border-radius: 15px;
+  transition: 0.7s;
+}
+
+.buttonItem:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.126);
+}
+
+.buttonCategoriasItem {
+  color: #787A91;
+  text-decoration: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  color: rgb(0, 9, 44);
+}
+
+.flexPriceButton {
+  display: flex;
+  justify-content: center;
+}
+
+.itemDetail__p {
+  padding: 50px;
+  margin-right: 100px;
+}
+
+.cartVacio {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  font-size: 20px;
+  color: rgb(75 76 95);
+}
+
+.cartVacio h1 {
+  margin: 8px;
+}
+
+.cartVacio div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartVacio p {
+  align-items: center;
+  color: #787A91;
+  margin: 3px;
+}
+
+.error404 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+}
+
+.error404 h1 {
+  color: rgb(75 76 95);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.error404 p {
+  color: #787A91;
+  font-size: 2rem;
+}
+
+.h2itemDetail {
+  text-align: center;
+  color: #000000ba;
+}
+
+.buttonTerminarCompra {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.buttonTerminarCompra button {
+  background: #000000ba;
+  color: white;
+}
+
+.buttonTerminarCompra button:hover {
+  background-color: #323030ba;
+}
+
+.mostrarCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 50px;
+  font-size: 1.3rem;
+  color: rgb(75 76 95);
+
+}
+
+.mostrarProducto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btnDelete {
+  height: 100px;
+  width: 40px;
+  margin-left: 30px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.3rem;
+  color: rgb(75 76 95);
+}
+
+.total p,
+button {
+  margin-left: 50px;
+}
+.form{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #000000ba;
+}
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+
+/*form styles*/
+#msform {
+	width: 700px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 50px 50px;
+	box-sizing: border-box;
+	width: 100%;
+  margin-top: 7rem;
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input {
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 15px;
+}
+ #msform input:focus{
+  outline: none;
+ border: 2px solid grey;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #646464;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+  font-size: 17px;
+  transition: .3s ease all;
+}
+#msform .action-button:hover{
+  background-color:#888888;
+}
+/*headings*/
+.fs-title {
+	font-size: 25px;
+	text-transform: uppercase;
+	color: #000000ba;
+	margin-bottom: 20px;
+}
+.errorNameForm{
+  color: #c71b1e;
+	font-weight: 600;
+	font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.errorCorreoForm{
+  color: #c71b1e;
+	font-weight: 600;
+	font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.errorTelefonoForm{
+  color: #c71b1e;
+	font-weight: 600;
+	font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.formEnviado{
+  text-align: center;
+	font-size: 17px;
+	padding-top: 15px;
+	color: #129112;
+}
+.orderCompra{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+
+
+
+
