@@ -9,35 +9,59 @@ import {
   where,
 } from "firebase/firestore";
 
-function ItemListContainer({ saludo }) {
+function ItemListContainer({imagen }) {
   const { id } = useParams();
   const [result, setResult] = useState();
-  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-
     const db = getFirestore();
-    const productsCollection = collection( db, 'products' );
-    if ( id ) {
-      const q = query( productsCollection, where('category', '==', id))
-      getDocs( q ).then((snapshot) => {
-        setResult( snapshot.docs.map(( doc ) => ({ ...doc.data(), id: doc.id })))
-    })}else{
-
-      getDocs( productsCollection ).then((snapshot) => {
-        setResult( snapshot.docs.map(( doc ) => ({ ...doc.data(), id: doc.id })) )
-      })
+    const productsCollection = collection(db, "products");
+    if (id) {
+      const q = query(productsCollection, where("category", "==", id));
+      getDocs(q)
+        .then((snapshot) => {
+          setResult(
+            snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+          );
+        })
+        .catch((error) => {
+          setError(true);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      getDocs(productsCollection)
+        .then((snapshot) => {
+          setResult(
+            snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+          );
+        })
+        .catch((error) => {
+          setError(true);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
-  }, [ id ]);
+  }, [id]);
 
   return (
     <>
       <div>
-        <h1 className="h1Saludo">{saludo}</h1>
-        {result !== undefined ? (
-          <ItemList personajes={result} />
-        ) : (
-          <ItemList personajes={products} />
+        {loading && (
+          <>
+            <div className="loadingFather">
+              <div className="line-wobble"></div>
+            </div>
+          </>
+        )}
+        {result && (
+          <>
+            <ItemList personajes={result} />
+          </>
         )}
       </div>
     </>

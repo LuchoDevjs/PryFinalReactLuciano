@@ -5,27 +5,29 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 export const Checkout = () => {
   const [formularioEnviado, setFormularioEnviado] = useState(false);
-  const { cart, getItemPrice } = useContext(CartContext);
+  const { cart, getItemPrice,emptyCart } = useContext(CartContext);
   const [orderCompra, setOrderCompra] = useState("");
+  const [idBuy, setIdBuy] = useState("");
 
   const db = getFirestore();
-  const orderCollection = collection(db, "orders");
+  const orderCollection = collection(db, "order");
+  
   
 
-  const handleClick = () => {
-    const order = {
-      buyer: { },
-      items: cart,
-      total: getItemPrice(),
-    };
-    addDoc(orderCollection, order).then(({ id }) => {
-      setOrderCompra(id);
-    });
-  };
+  // const handleClick = () => {
+  //   const order = {
+  //     buyer: {},
+  //     items: cart,
+  //     total: getItemPrice(),
+  //   };
+  //   addDoc(orderCollection, order).then(({ id }) => {
+  //     setOrderCompra(id);
+  //   });
+  // };
   return (
     <> 
       {orderCompra.length > 0 ? (
-        <div className="orderCompra">
+        <div className="purchaseOrder">
           <h1 style={{ fontSize: "2.2rem", color: "rgb(75 76 95)" }}>
             {" "}
             Muchas gracias por comprar en nuestra tienda!{" "}
@@ -37,8 +39,7 @@ export const Checkout = () => {
       ) : (
         <Formik
           initialValues={{
-            nombre: "",
-            correo: "",
+          
           }}
           validate={(valores) => {
             let errores = {};
@@ -60,7 +61,7 @@ export const Checkout = () => {
               errores.correo =
                 "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo";
             }
-            // validacion telefono
+            // telefono
             if (!valores.telefono) {
               errores.telefono = "Porfavor ingrese un numero de telefono";
             } else if (!/^\+[1-9]{1}[0-9]{3,14}$/.test(valores.telefono)) {
@@ -69,16 +70,25 @@ export const Checkout = () => {
             }
             return errores;
           }}
-          onSubmit={(valores, { resetForm }) => {
+          onSubmit={(values, { resetForm }) => {
+            const order = {
+              buyer: { ...values },
+              total: getItemPrice(),
+              items: [...cart],
+            };
+            addDoc(orderCollection, order).then(({ id }) => {
+              setOrderCompra(id);
+            });
             resetForm();
+            emptyCart();
             setFormularioEnviado(true);
             setTimeout(() => {
               setFormularioEnviado(false);
             }, 4000);
           }}
         >
-          {({ errors }) => (
-            <Form action="" id="msform" className="formLucho">
+          {({ errors,isSubmitting }) => (
+            <Form action="" id="msform" className="formFather">
               <fieldset>
                 <h2 className="fs-title">Complete el Formulario</h2>
                 <div>
@@ -87,6 +97,7 @@ export const Checkout = () => {
                     id="nombre"
                     name="nombre"
                     placeholder="Luciano"
+                    required
                   />
                   <ErrorMessage
                     name="nombre"
@@ -101,6 +112,8 @@ export const Checkout = () => {
                     id="telefono"
                     name="telefono"
                     placeholder="+541145096743"
+                    required
+                 className="fieldRequired"
                   />
                   <ErrorMessage
                     name="telefono"
@@ -115,6 +128,7 @@ export const Checkout = () => {
                     id="correo"
                     name="correo"
                     placeholder="correo@gmail.com"
+                    required
                   />
                   <ErrorMessage
                     name="correo"
@@ -123,11 +137,11 @@ export const Checkout = () => {
                     )}
                   />
                 </div>
-                <button className="next action-button" onClick={ handleClick()}>
+                <button className="buttonsDetail" onClick={isSubmitting}>
                   Enviar
                 </button>
                 {formularioEnviado && (
-                  <p className="formEnviado">Formulario enviado con exito!</p>
+                  <p className="formSent">Formulario enviado con exito!</p>
                 )}
               </fieldset>
             </Form>

@@ -7,8 +7,10 @@ function CartWidget() {
 
   return (
     <>
+    <div style={{display:'flex',alignItems:"center"}}>
       <MdAddShoppingCart style={{fontSize:"1.4rem"}}/>
-      <span style={{textAlign:"center",marginBottom:"50px"}}>{getItemQty() > 0 && getItemQty()}</span>
+      <p style={{marginBottom:"15px",fontFamily: '"GT America", "Helvetica Neue", "Helvetica", "sans-serif"',fontWeight:"300"}}>{getItemQty() > 0 && getItemQty()}</p>
+      </div>
     </>
   );
 }

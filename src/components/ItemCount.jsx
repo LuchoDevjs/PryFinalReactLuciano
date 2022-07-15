@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import {getDocs, query, where, collection, getFirestore} from 'firebase/firestore';
 
 export default function ItemCount({ inicial, onAdd, stock}) {
   const [count, setCount] = useState(inicial);
@@ -20,22 +18,19 @@ export default function ItemCount({ inicial, onAdd, stock}) {
 
   return (
     <>
-      <div className="contador">
-        <Stack direction="row" spacing={2}>
-          <Button onClick={sumarStock} variant="contained">
+      <div className="counter">
+        <Stack direction="row" spacing={2} style={{alignItems:"center"}}>
+          <button onClick={sumarStock} className="buttonsDetail">
             +
-          </Button>
+          </button>
           <h2 style={{ display: "flex", justifyContent: "center" }}>{count}</h2>
-          <Button onClick={restarStock} variant="outlined">
+          <button onClick={restarStock} className="buttonsDetail">
             -
-          </Button>
-          <Button
-            onClick={() => {
+          </button>
+          <button  onClick={() => {
               onAdd(count);
-            }}
-          >
-            Agregar al carrito
-          </Button>
+            }} className="buttonsDetail"> Agregar al carrito</button>
+            
         </Stack>
       </div>
     </>

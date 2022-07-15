@@ -1,11 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 const { Provider } = CartContext;
 
 const MyProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('productos')) ?? []);
+
+  useEffect(() => {
+    localStorage.setItem('productos', JSON.stringify(cart));
+}, [cart]);
 
   // metodo some - itemdetail - se encarga de detectar si el producto a agregar ya esta en el carrito o no. retorna booleano
   const isInCart = (id) => {
@@ -45,7 +49,7 @@ const MyProvider = ({ children }) => {
     return cart.reduce(( acc, x ) => acc += x.quantity * x.price, 0)
   };
 
-  return <Provider value={{ cart, addItem , emptyCart, deleteItem, getItemQty, getItemPrice }}>{ children} </Provider>;
+  return <Provider value={{ cart, addItem , emptyCart, deleteItem, getItemQty, getItemPrice,isInCart }}>{ children} </Provider>;
 };
 
 export default MyProvider;

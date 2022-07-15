@@ -13,9 +13,10 @@ function Cart() {
         <>
           <div>
             {cart.map((item, index) => (
-              <div key={index} className="mostrarCart">
+              <div className="cartFather">
+              <div key={index} className="showCart">
                 <>
-                  <div className="mostrarProducto">
+                  <div className="showProduct">
                     <img
                       src={item.image}
                       style={{ width: 200, padding:"25px" }}
@@ -31,13 +32,14 @@ function Cart() {
                   </div>
                 </>
               </div>
+              </div>
             ))}
             <div className="total">
-              <p style={{padding:"25px"}}>Total: ${getItemPrice()}</p>
-              <Link to={"/checkout"} className="buttonTerminarCompra">
-              <Button>Comprar</Button>
+              <p style={{padding:"25px",marginRight:"20px"}}>Total: ${getItemPrice()}</p>
+              <Link to={"/checkout"} style={{marginRight:"20px"}}>
+              <button className="buttonsDetail"> Comprar </button>
               </Link>
-                <Button style={{color:"rgb(75 76 95)",border:"none",fontSize:"1rem", padding:"25px"}} variant="outlined" startIcon={<DeleteIcon />} onClick={() => emptyCart()}>
+                <Button style={{color:"#413F42",border:"none",fontSize:"1rem", padding:"25px",marginLeft:"20px",   fontFamily: '"GT America", "Helvetica Neue", "Helvetica", "sans-serif"',fontWeight:"300"}} variant="outlined" startIcon={<DeleteIcon />} onClick={() => emptyCart()}>
                   Vaciar Carrito
                 </Button>
           
@@ -45,9 +47,9 @@ function Cart() {
           </div>
         </>
       ) : (
-        <div className="cartVacio">
+        <div className="emptyCart">
           <h1>Tu carrito está vacío</h1>
-          <div className="carVacioP">
+          <div>
             <p>¿No sabes que comprar?</p>
             <p>¡Miles de productos te esperan!</p>
           </div>

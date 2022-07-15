@@ -10,6 +10,8 @@ import CartContext from "./components/context/CartContext";
 import MyProvider from "./components/context/CartContext";
 import { initializeApp } from "firebase/app";
 import { Checkout } from "./components/Checkout";
+import { Footer } from "./components/Footer";
+import { Main } from "./components/Main";
 
 
 
@@ -32,10 +34,11 @@ function App() {
             <NavBar />
             <div className="contenido">
               <Routes>
+                <Route path="/" element={<Main/>}/>
                 <Route
-                  path="/"
+                  path="/productos"
                   element={
-                    <ItemListContainer saludo="BIENVENIDOS A MI E-COMMERCE" />
+                    <ItemListContainer />
                   }
                 />
                 <Route path="/category/:id" element={<ItemListContainer />} />
@@ -44,6 +47,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout/>}/>
                 <Route path="*" element={<Error404 />} />
               </Routes>
+              <Footer/>
             </div>
           </CartContext>
         </MyProvider>

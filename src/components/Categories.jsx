@@ -18,11 +18,11 @@ export const Categories = ({ handleClose }) => {
    <>
     { category.map((el) => (
          <Link
-         to={"/category/" + el}
-         className="buttonCategoriasItem"
+         to={"category/" + el}
+         className="buttonCategories"
          key={el}
        >
-         <MenuItem onClick={handleClose}> {el.charAt(0).toUpperCase() + el.slice(1)} </MenuItem>
+         <MenuItem style={{fontFamily:'"GT America", "Helvetica Neue", "Helvetica", "sans-serif"',fontWeight:"400"}} onClick={handleClose}> {el.charAt(0).toUpperCase() + el.slice(1)} </MenuItem>
        </Link>
     )) }
    </>
