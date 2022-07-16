@@ -2,6 +2,7 @@ import React from "react";
 import { IoLogoInstagram } from "react-icons/io";
 import { TiSocialPinterest } from "react-icons/ti";
 import { Link } from 'react-router-dom';
+
 export const Footer = () => {
   return (
     <footer className="footer">
@@ -11,8 +12,7 @@ export const Footer = () => {
         <div className="FooterList">
             <p>HOME</p>
             <p>CONTACTO</p>
-            <p>SIGN UP</p>
-           
+            <p>INICIAR SESION</p> 
         </div>
         <div>
           <a

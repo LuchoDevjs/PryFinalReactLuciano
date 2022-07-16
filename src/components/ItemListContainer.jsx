@@ -9,11 +9,10 @@ import {
   where,
 } from "firebase/firestore";
 
-function ItemListContainer({imagen }) {
+function ItemListContainer() {
   const { id } = useParams();
   const [result, setResult] = useState();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     const db = getFirestore();
@@ -26,9 +25,6 @@ function ItemListContainer({imagen }) {
             snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
           );
         })
-        .catch((error) => {
-          setError(true);
-        })
         .finally(() => {
           setLoading(false);
         });
@@ -38,9 +34,6 @@ function ItemListContainer({imagen }) {
           setResult(
             snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
           );
-        })
-        .catch((error) => {
-          setError(true);
         })
         .finally(() => {
           setLoading(false);
@@ -60,7 +53,7 @@ function ItemListContainer({imagen }) {
         )}
         {result && (
           <>
-            <ItemList personajes={result} />
+            <ItemList products={result} />
           </>
         )}
       </div>

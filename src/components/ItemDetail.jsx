@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "./context/CartContext";
@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 function ItemDetail({ item }) {
   const { model, image, price, description, stock } = item;
-  const [units, setUnits] = useState(0);
+ 
   const { addItem, isInCart } = useContext( CartContext )
 
   const onAdd = (quantityToAdd) => {
@@ -17,7 +17,6 @@ function ItemDetail({ item }) {
       background:"#FAFAFA",
       confirmButtonColor: '#413F42',
   })
-    setUnits(quantityToAdd);
     addItem( item, quantityToAdd )
   };
 
@@ -43,7 +42,7 @@ function ItemDetail({ item }) {
               </Link>
               </>
             ) : (
-              <ItemCount inicial={1} onAdd={onAdd} stock={stock} />
+              <ItemCount initial={1} onAdd={onAdd} stock={stock} />
             )}
           </div>
         </div>

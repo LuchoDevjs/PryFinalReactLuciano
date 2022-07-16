@@ -174,10 +174,8 @@ html {
   flex-direction: row;
   justify-content: center;
   margin: 50px;
-  margin-top: 9rem;
   font-size: 1.3rem;
   color: rgb(75 76 95);
-
 }
 
 .showProduct {
@@ -185,6 +183,15 @@ html {
   flex-direction: row;
   align-items: center;
   font-weight: 300;
+}
+
+.showProduct img {
+  width: 200px;
+  padding: 25px;
+}
+
+.showProduct p {
+  padding: 25px;
 }
 
 .btnDelete {
@@ -202,6 +209,11 @@ html {
   color: #413F42;
   font-weight: 300;
   margin-bottom: 105px;
+}
+
+.total p {
+  padding: 25px;
+  margin-right: 20px;
 }
 
 .total p,
@@ -293,25 +305,7 @@ button {
   margin-bottom: 30px;
 }
 
-.errorNameForm {
-  color: #c71b1e;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 20px;
-  text-align: left;
-  font-weight: 400;
-}
-
-.errorCorreoForm {
-  color: #c71b1e;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 20px;
-  text-align: left;
-  font-weight: 400;
-}
-
-.errorTelefonoForm {
+.errorForm {
   color: #c71b1e;
   font-weight: 600;
   font-size: 14px;
@@ -338,7 +332,13 @@ button {
 }
 
 .purchaseOrder h1 {
+  font-size:2.2rem;
+   color: rgb(75 76 95);
   font-weight: 300;
+}
+.purchaseOrder p{
+  font-size: 1.5rem;
+   color: #787A91;
 }
 
 /* From uiverse.io by @adamgiebl */
@@ -577,51 +577,62 @@ a {
     "b1 b2"
     "b1 b3"
     "b1 b4";
-    padding: 0rem 10rem;
-    margin-bottom: 5rem;
+  padding: 0rem 10rem;
+  margin-bottom: 5rem;
 }
-.box{
+
+.box {
   padding: 10px;
 }
-.b1{
+
+.b1 {
   grid-area: b1;
   text-align: end;
 }
-.b2{
+
+.b2 {
   grid-area: b2;
 }
-.b3{
+
+.b3 {
   grid-area: b3;
 }
-.b4{
+
+.b4 {
   grid-area: b4;
 }
+
 .boxImg {
   height: 100%;
   width: 75%;
   border-radius: 50%;
 }
+
 .boxImg:hover {
-    filter: grayscale(100%) brightness(90%) contrast(90%);
-    transition: all ease 0.5s;
+  filter: grayscale(100%) brightness(90%) contrast(90%);
+  transition: all ease 0.5s;
 }
+
 .indoor {
   height: 100%;
   width: 80%;
-  margin:0px;   
+  margin: 0px;
 }
-.h1Grid{
-    font-size: 1.8rem;
-    text-align: center;
-    color: #413F42;
-    font-weight: 300;
-   margin-bottom: 3rem;
-  }
-  .mainImgContainer{
-    position: relative;
-    display: inline-block;
-  }
-.mainImgContainer p{
+
+.h1Grid {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #413F42;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.mainImgContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.mainImgContainer p {
   text-align: right;
   font-weight: 300;
   font-size: 2.3rem;
@@ -631,523 +642,198 @@ a {
   margin-left: 31rem;
   bottom: 3rem;
 }
+
 @media only screen and (min-width: 770px) and (max-width: 1023px) {
-  .h1Title {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-top: 9rem;
-  } 
-  .productsList {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-  
-  .itemDetail {
-    margin-top: 10.2rem;
-    margin-bottom: 11rem;
+
+  .showCart {
+    margin-top: 4rem;
   }
 
-  .buttonItem {
-    text-decoration: none;
-    color: #73777B;
-    border-radius: 3px;
-    transition: 0.5s;
+  .itemDetail {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
-  
-  .buttonItem:hover {
-    color: white;
-    background-color: #F7F5F2;
-  }
-  
-  .buttonCategories {
-    color: #413F42;
-    text-decoration: none;
-  }
-  
-  
-  .itemDetail__priceButton {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .itemDetail__priceButton h2 {
-    font-weight: 300;
-  }
-  
+
   .itemDetail__p {
-    padding: 50px;
-    margin-right: 100px;
-  
+    margin-right: 10px;
   }
-  
-  .itemDetail__p h1 {
-    font-weight: 300;
+
+  .itemDetail__img {
+    margin-left: 10px;
   }
-  
-  .emptyCart {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 80vh;
-    font-size: 20px;
-    color: rgb(75 76 95);
-    font-weight: 300;
-  }
-  
-  .emptyCart h1 {
-    margin: 8px;
-    font-weight: 300;
-  }
-  
-  .emptyCart div {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .emptyCart p {
-    align-items: center;
-    color: #73777B;
-    margin: 3px;
-  }
-  
+
   .error404 {
     margin-top: 25rem;
     margin-bottom: 20.8rem;
-  } 
+  }
+
   .total {
     margin-bottom: 15rem;
   }
-  
-  .form {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    color: #413F42;
-  }
-  
-  /*custom font*/
-  @import url(https://fonts.googleapis.com/css?family=Montserrat);
-  
-  /*basic reset*/
-  
+
   /*form styles*/
   #msform {
     width: 700px;
-    margin: 50px auto;
+    margin: 12rem 0px 10rem 33px;
     text-align: center;
     position: relative;
   }
-  
-  #msform fieldset {
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 50px 50px;
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: 9rem;
-    position: relative;
-  }
-  
-  /*Hide all except first fieldset*/
-  #msform fieldset:not(:first-of-type) {
-    display: none;
-  }
-  
-  /*inputs*/
-  #msform input {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: montserrat;
-    color: #2C3E50;
-    font-size: 15px;
-  }
-  
-  #msform input:focus {
-    outline: none;
-    border: 2px solid grey;
-  }
-  
-  /*buttons*/
-  #msform .action-button {
-    width: 100px;
-    background: #646464;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
-    font-size: 17px;
-    transition: .3s ease all;
-  }
-  
-  #msform .action-button:hover {
-    background-color: #888888;
-  }
-  
-  /*headings*/
-  .fs-title {
-    font-size: 25px;
-    text-transform: uppercase;
-    color: #413F42;
-    margin-bottom: 20px;
-    font-weight: 300;
-    margin-bottom: 30px;
-  }
-  
-  .errorNameForm {
-    color: #c71b1e;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-align: left;
-    font-weight: 400;
-  }
-  
-  .errorCorreoForm {
-    color: #c71b1e;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-align: left;
-    font-weight: 400;
-  }
-  
-  .errorTelefonoForm {
-    color: #c71b1e;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-align: left;
-    font-weight: 400;
-  }
-  
-  .formSent {
-    text-align: center;
-    font-size: 17px;
-    padding-top: 15px;
-    color: #129112;
-    font-weight: 400;
-  }
-  
-  .purchaseOrder {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 80vh;
-    font-weight: 300;
-  }
-  
-  .purchaseOrder h1 {
-    font-weight: 300;
-  }
-  
-  /* From uiverse.io by @adamgiebl */
-  .buttonsDetail {
-    font-family: "GT America", "Helvetica Neue", "Helvetica", sans-serif;
-    margin: 0;
-    color: #090909;
-    padding: 0.7em 1.7em;
-    font-size: 18px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all .3s;
-    box-shadow: 6px 6px 12px #c5c5c5,
-      -6px -6px 12px #ffffff;
-    font-weight: 300;
-  }
-  
-  .buttonBuy:hover {
-    border: 1px solid white;
-  }
-  
-  .buttonBuy:active {
-    box-shadow: 4px 4px 12px #c5c5c5,
-      -4px -4px 12px #ffffff;
-  }
-  
-  /* loading */
-  .loadingFather {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
-  
-  /* From uiverse.io by @G4b413l */
-  .line-wobble {
-    --uib-size: 80px;
-    --uib-speed: 1.55s;
-    --uib-color: #413F42;
-    --uib-line-weight: 5px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--uib-line-weight);
-    width: var(--uib-size);
-    border-radius: calc(var(--uib-line-weight) / 2);
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-  }
-  
-  .line-wobble::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--uib-color);
-    opacity: 0.1;
-  }
-  
-  .line-wobble::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    border-radius: calc(var(--uib-line-weight) / 2);
-    animation: wobble var(--uib-speed) ease-in-out infinite;
-    transform: translateX(-90%);
-    background-color: var(--uib-color);
-  }
-  
-  @keyframes wobble {
-  
-    0%,
-    100% {
-      transform: translateX(-90%);
-    }
-  
-    50% {
-      transform: translateX(90%);
-    }
-  }
-  
-  /* From uiverse.io by @ercnersoy */
-  .input {
-    border: none;
-    padding: 1rem;
-    border-radius: 1rem;
-    background: #e8e8e8;
-    box-shadow: 20px 20px 60px #c5c5c5,
-      -20px -20px 60px #ffffff;
-    transition: 0.3s;
-  }
-  
-  .input:focus {
-    outline-color: #e8e8e8;
-    background: #e8e8e8;
-    box-shadow: inset 20px 20px 60px #c5c5c5,
-      inset -20px -20px 60px #ffffff;
-    transition: 0.3s;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  
+
   /* Float 3 columns side by side */
   .column {
-    float: left;
-    width: 28.50%;
-    padding: 10px;
-  }
-  
-  /* Responsive columns */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
-  
-  /* Style the counter cards */
-  .product-card {
-    width: 380px;
-    position: relative;
-    box-shadow: 0 2px 7px #dfdfdf;
-    margin: 20px auto;
-    background: #fafafa;
-  }
-  
-  .product-tumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    padding: 20px;
-    background: white;
-  }
-  
-  .product-tumb img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .product-details {
-    padding: 20px;
-  }
-  
-  .product-details h4 {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #413F42;
-  }
-  
-  .product-bottom-details {
-    overflow: hidden;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .product-bottom-details div {
-    float: left;
     width: 50%;
   }
-  
-  .product-price {
-    font-size: 20px;
-    color: #413F42;
-    font-weight: 300;
-  }
-  
-  .product-price small {
-    font-size: 80%;
-    font-weight: 300;
-    text-decoration: line-through;
-    display: inline-block;
-    margin-right: 5px;
-  }
-  
-  h3 {
-    font-weight: 300;
-  }
-  
-  .footer {
-    background: #FAFAFA;
-    color: #413F42;
-    min-height: 20vw;
-    position: relative;
-    padding: 0;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.7;
-    font-weight: 300;
-    letter-spacing: 0.035vw;
-  }
-  
-  .footerChildren {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0 auto;
-    padding: 5% 0;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #413F42;
-  }
-  
-  .footerList li {
-    padding-bottom: 8px;
-  }
-  
-  .productsTitle {
-    font-size: 2rem;
-    text-align: center;
-    color: #413F42;
-    font-weight: 300;
-    margin-top: 9rem;
-  }
-  
+
   .boxGrid {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: auto auto;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "b1 b2"
-      "b1 b3"
-      "b1 b4";
-      padding: 0rem 10rem;
-      margin-bottom: 5rem;
+    padding: 0;
   }
-  .box{
+
+  .mainImgContainer p {
+    font-size: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .h1Title {
+    font-size: 1.3rem;
+  }
+
+  .showCart {
+    font-size: 1rem;
+  }
+
+  .showProduct {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 300;
+  }
+
+  .showProduct img {
+    width: 100px;
+    padding: 2px;
+  }
+
+  .showProduct p {
+    padding: 12px;
+  }
+
+  .btnDelete {
+    width: 35px;
+    margin-left: 0px;
+  }
+
+  .total {
+    font-size: 1.2rem;
+    margin-bottom: 8rem;
+  }
+
+  .total p {
+    padding: 0;
+  }
+
+  .total p,
+  button {
+    margin-left: 30px;
+  }
+
+  .showCart {
+    margin-top: 4rem;
+  }
+
+  .itemDetail {
+    flex-direction: column;
+  }
+
+  .itemDetail__img {
+    width: 70%;
+    padding: 10px;
+    margin-left: 0px;
+    margin-bottom: 1rem;
+  }
+
+  .itemDetail__p {
+    padding: 10px;
+    margin-right: 0px;
+
+  }
+
+  .itemDetail__p h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+
+  /*form styles*/
+  #msform {
+    width: 350px;
+    margin: 10rem 0px 5rem 23px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Float 3 columns side by side */
+  .column {
+    width: 100%;
+  }
+
+  /* Style the counter cards */
+  .product-card {
+    width: 21rem;
+    margin: 10px auto;
+  }
+
+  .product-tumb {
+    height: 15rem;
+    padding: 20px;
+  }
+
+  .product-tumb img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .product-details {
     padding: 10px;
   }
-  .b1{
-    grid-area: b1;
-    text-align: end;
-  }
-  .b2{
-    grid-area: b2;
-  }
-  .b3{
-    grid-area: b3;
-  }
-  .b4{
-    grid-area: b4;
-  }
-  .boxImg {
-    height: 100%;
-    width: 75%;
-    border-radius: 50%;
-  }
-  .boxImg:hover {
-      filter: grayscale(100%) brightness(90%) contrast(90%);
-      transition: all ease 0.5s;
-  }
-  .indoor {
-    height: 100%;
-    width: 80%;
-    margin:0px;   
-  }
-  .h1Grid{
-      font-size: 1.8rem;
-      text-align: center;
-      color: #413F42;
-      font-weight: 300;
-     margin-bottom: 3rem;
-    }
-    .mainImgContainer{
-      position: relative;
-      display: inline-block;
-    }
-  .mainImgContainer p{
-    text-align: right;
-    font-weight: 300;
-    font-size: 2.3rem;
-    color: white;
-    position: absolute;
-    margin-right: 1.5rem;
-    margin-left: 31rem;
-    bottom: 3rem;
-  }
-}
-@media only screen and (max-width: 767px) {
 
+  .boxGrid {
+    padding: 0;
+  }
+
+  .mainImgContainer p {
+    font-size: 1.2rem;
+    margin-right: 5px;
+    margin-left: 5px;
+    bottom: 2.4rem;
+  }
+
+  .h1Grid {
+    font-size: 1.2rem;
+  }
+  .purchaseOrder h1 {
+    font-size:1.2rem;
+  }
+  .purchaseOrder p{
+    font-size: 1.2rem;
+  }
+
+.error404 {
+
+  margin-top: 16rem;
+  margin-bottom: 10rem;
 }
 
+.error404 h1 {
+  font-size: 2rem;
+  font-weight: 300;
+}
 
+.error404 p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-left: 15px;
+}
+}

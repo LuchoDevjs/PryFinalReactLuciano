@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
 
-export default function ItemCount({ inicial, onAdd, stock}) {
-  const [count, setCount] = useState(inicial);
+export default function ItemCount({ initial, onAdd, stock}) {
+  const [count, setCount] = useState(initial);
 
   const sumarStock = () => {
     if (count < stock) {

@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function Item({ personaje }) {
-  const { model, image, price, color, id, stock } = personaje;
+function Item({ products }) {
+  const { model, image, price, color, id, stock } = products;
   return (
     <>
       <div className="column">

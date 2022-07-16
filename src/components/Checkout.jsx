@@ -4,35 +4,21 @@ import { CartContext } from "./context/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 export const Checkout = () => {
-  const [formularioEnviado, setFormularioEnviado] = useState(false);
+  const [formSent, setFormSent] = useState(false);
   const { cart, getItemPrice,emptyCart } = useContext(CartContext);
   const [orderCompra, setOrderCompra] = useState("");
-  const [idBuy, setIdBuy] = useState("");
 
   const db = getFirestore();
   const orderCollection = collection(db, "order");
   
-  
-
-  // const handleClick = () => {
-  //   const order = {
-  //     buyer: {},
-  //     items: cart,
-  //     total: getItemPrice(),
-  //   };
-  //   addDoc(orderCollection, order).then(({ id }) => {
-  //     setOrderCompra(id);
-  //   });
-  // };
   return (
     <> 
       {orderCompra.length > 0 ? (
         <div className="purchaseOrder">
-          <h1 style={{ fontSize: "2.2rem", color: "rgb(75 76 95)" }}>
-            {" "}
-            Muchas gracias por comprar en nuestra tienda!{" "}
+          <h1>
+            Muchas gracias por comprar en nuestra tienda!
           </h1>
-          <p style={{ fontSize: "1.5rem", color: "#787A91" }}>
+          <p>
             Su orden es: {orderCompra}
           </p>
         </div>
@@ -42,33 +28,33 @@ export const Checkout = () => {
           
           }}
           validate={(valores) => {
-            let errores = {};
+            let errors = {};
             // validacion nombre
             if (!valores.nombre) {
-              errores.nombre = "Porfavor ingresa su nombre";
+              errors.nombre = "Porfavor ingresa su nombre";
             } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
-              errores.nombre =
+              errors.nombre =
                 "El nombre solo puede contener letras y espacios";
             }
             // validacion correo
             if (!valores.correo) {
-              errores.correo = "Porfavor ingrese un correo electronico";
+              errors.correo = "Porfavor ingrese un correo electronico";
             } else if (
               !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
                 valores.correo
               )
             ) {
-              errores.correo =
+              errors.correo =
                 "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo";
             }
             // telefono
             if (!valores.telefono) {
-              errores.telefono = "Porfavor ingrese un numero de telefono";
+              errors.telefono = "Porfavor ingrese un numero de telefono";
             } else if (!/^\+[1-9]{1}[0-9]{3,14}$/.test(valores.telefono)) {
-              errores.telefono =
+              errors.telefono =
                 "Ingrese el numero de telefono completo porfavor";
             }
-            return errores;
+            return errors;
           }}
           onSubmit={(values, { resetForm }) => {
             const order = {
@@ -81,9 +67,9 @@ export const Checkout = () => {
             });
             resetForm();
             emptyCart();
-            setFormularioEnviado(true);
+            setFormSent(true);
             setTimeout(() => {
-              setFormularioEnviado(false);
+              setFormSent(false);
             }, 4000);
           }}
         >
@@ -102,7 +88,7 @@ export const Checkout = () => {
                   <ErrorMessage
                     name="nombre"
                     component={() => (
-                      <div className="errorNameForm">{errors.nombre}</div>
+                      <div className="errorForm nameForm">{errors.nombre}</div>
                     )}
                   />
                 </div>
@@ -118,7 +104,7 @@ export const Checkout = () => {
                   <ErrorMessage
                     name="telefono"
                     component={() => (
-                      <div className="errorTelefonoForm">{errors.telefono}</div>
+                      <div className="errorForm phoneForm">{errors.telefono}</div>
                     )}
                   />
                 </div>
@@ -133,14 +119,14 @@ export const Checkout = () => {
                   <ErrorMessage
                     name="correo"
                     component={() => (
-                      <div className="errorCorreoForm">{errors.correo}</div>
+                      <div className="errorForm emailForm">{errors.correo}</div>
                     )}
                   />
                 </div>
                 <button className="buttonsDetail" onClick={isSubmitting}>
                   Enviar
                 </button>
-                {formularioEnviado && (
+                {formSent && (
                   <p className="formSent">Formulario enviado con exito!</p>
                 )}
               </fieldset>
