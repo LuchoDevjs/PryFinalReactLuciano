@@ -769,7 +769,7 @@ a {
   /*form styles*/
   #msform {
     width: 350px;
-    margin: 10rem 0px 5rem 23px;
+    margin: 10rem 0px 5rem 26px;
     text-align: center;
     position: relative;
   }
@@ -821,7 +821,6 @@ a {
   }
 
 .error404 {
-
   margin-top: 16rem;
   margin-bottom: 10rem;
 }
@@ -835,5 +834,8 @@ a {
   font-size: 1.5rem;
   font-weight: 300;
   margin-left: 15px;
+}
+.indoor {
+  width: 70%;
 }
 }
