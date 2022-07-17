@@ -843,7 +843,13 @@ a {
   font-size: 2rem;
 }
 .b1{
-  padding-right: 25px;
-  width: 106%;
+  width: 115%;
+}
+.b2{
+  width: 115%;
+}.b3{
+  width: 115%;
+}.b4{
+  width: 115%;
 }
 }

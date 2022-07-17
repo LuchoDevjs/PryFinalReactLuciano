@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Main = () => {
   return (
     <>
-      <h1 className="h1Title">BIENVENIDOS A MI E-COMMERCEeee</h1>
+      <h1 className="h1Title">BIENVENIDOS A MI E-COMMERCE</h1>
       <div className="mainImgContainer">
       <img
         src="https://media.revistagq.com/photos/62c2dd5c6479fa73c1ca229b/master/pass/gorras%20new%20era%20precio%20historia.jpg"
