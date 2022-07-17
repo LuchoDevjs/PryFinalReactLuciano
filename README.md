@@ -3,12 +3,12 @@ E-Commerce de Luciano Gonzalez.
 Hice un e-commerce como proyecto utilizando react.
 
 Herramientas:
-- Material-ui me facilito muchisimo el diseño de la Nav, me permitio reducir tiempo y hacer responsive mi proyecto.
-- React-Icons me ayudo con todos los iconos que se encuentran en la pagina.
-- Sweet Alert me ayudo para tener mejores alertas para el cliente.
-- Formik me permitio hacer el formulario de contacto con las validacion necesarias.
-- Firebase Database para el almacenamiento de los datos de mi proyecto.
-- Vercel para el deploy de la app.
+- https://mui.com/ me facilito muchisimo el diseño de la Nav, me permitio reducir tiempo y hacer responsive mi proyecto.
+- https://react-icons.github.io/react-icons me ayudo con todos los iconos que se encuentran en la pagina.
+- https://sweetalert2.github.io/ me ayudo para tener mejores alertas para el cliente.
+- https://formik.org/ me permitio hacer el formulario de contacto con las validacion necesarias.
+- https://console.firebase.google.com/u/0/ para el almacenamiento de los datos de mi proyecto.
+- https://vercel.com/ para el deploy de la app.
 
 Pasos a seguir para ejecutar la app de forma local:
 - Clonar repositorio en un directorio.

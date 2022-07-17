@@ -20,11 +20,11 @@ export default function ItemCount({ initial, onAdd, stock}) {
     <>
       <div className="counter">
         <Stack direction="row" spacing={2} style={{alignItems:"center"}}>
-          <button onClick={sumarStock} className="buttonsDetail">
+          <button onClick={restarStock} className="buttonsDetail">
             -
           </button>
           <h2 style={{ display: "flex", justifyContent: "center" }}>{count}</h2>
-          <button onClick={restarStock} className="buttonsDetail">
+          <button onClick={sumarStock} className="buttonsDetail">
             +
           </button>
           <button  onClick={() => {
