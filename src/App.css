@@ -838,13 +838,14 @@ a {
 }
 .indoor {
   width: 70%;
-  padding: 6px;
+  padding: 3px;
 }
 .emptyCart h1{
   font-size: 2rem;
 }
 .b1{
-  width: 150%;
+  width: 145%;
+  padding-top: 1rem;
 }
 .b2{
   width: 115%;
