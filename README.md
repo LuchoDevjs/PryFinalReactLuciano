@@ -10,7 +10,7 @@ Herramientas:
 - Firebase Database para el almacenamiento de los datos de mi proyecto.
 - Vercel para el deploy de la app.
 
-###Pasos a seguir para ejecutar la app de forma local:
+Pasos a seguir para ejecutar la app de forma local:
 - Clonar repositorio en un directorio.
 - Desde la consola, ubicarme en el directorio donde clone el proyecto y ejecutar npm-install.
 - Desde la consola, ubicarme en el directorio donde clone el proyecto y ejecutar npm-start para correr el proyecto.
