@@ -577,12 +577,12 @@ a {
     "b1 b2"
     "b1 b3"
     "b1 b4";
-  padding: 0rem 10rem;
+  padding: 0rem 6rem;
   margin-bottom: 5rem;
 }
 
 .box {
-  padding: 10px;
+  padding: 0px;
 }
 
 .b1 {
@@ -814,10 +814,10 @@ a {
     font-size: 1.2rem;
   }
   .purchaseOrder h1 {
-    font-size:1.2rem;
+    font-size:1rem;
   }
   .purchaseOrder p{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
 .error404 {
