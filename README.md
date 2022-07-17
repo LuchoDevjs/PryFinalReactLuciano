@@ -16,6 +16,8 @@ Pasos a seguir para ejecutar la app de forma local:
 - Desde la consola, ubicarme en el directorio donde clone el proyecto y ejecutar npm-start para correr el proyecto.
   
 URL del video del proyecto https://www.loom.com/share/a42941df959d471b9e86fad0e5af7b20  
+
+
 URl del proyecto https://weblucho.vercel.app/
 
 Desarrollado por Luciano Gonzalez con 17 años - 2022.
