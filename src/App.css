@@ -838,4 +838,7 @@ a {
 .indoor {
   width: 70%;
 }
+.emptyCart h1{
+  font-size: 2rem;
+}
 }

@@ -15,6 +15,6 @@ Herramientas:
 - Desde la consola, ubicarme en el directorio donde clone el proyecto y ejecutar npm-install.
 - Desde la consola, ubicarme en el directorio donde clone el proyecto y ejecutar npm-start para correr el proyecto.
   
-URl del proyecto https://pry-final-react-luciano.vercel.app/
+URl del proyecto https://weblucho.vercel.app/
 
 Desarrollado por Luciano Gonzalez con 17 años - 2022.
